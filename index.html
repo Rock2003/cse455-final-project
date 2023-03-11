@@ -46,10 +46,73 @@
     </div>
     <br>
     Here are some sample pictures of our dataset:
+    <br>
+    <img src="download.png">
+    <br>
 
-  
+    <h3>Processing:</h3>
+    <div>To ensure uniformity of our data for training. We first filtered images by 
+        their aspect ratio such that we only have square images with a 1:1 ratio. Since our GPUs
+        have limited memory, we decided to scale down images to a jpeg format with a size of 64x64x3.
+        Images are also flipped 50% of the time horizontally in our training dataset to ensure
+        more randomness. Finally, only a batch size of 128 is used to load the data for every
+        training iteration.
 
-  <script src="main.js"></script>
+    </div>
+    <br>
+    <div>Our Data Processing is initially done on <a href="https://www.kaggle.com/code/youssefben03/cv-final-project-amanda-youssef">this Kaggle Notebook</a></div>
+    <br>
+    <h3>Algorithm:</h3>
+    <div>
+        We use a binary Classification approach using a CNN model. We first start by using resnet18
+        as it works very well for this type of Classifications as we have seen through the class tutorials.
+        The model is trained for 70 epochs with a learning rate of 0.01. We evaluate our model on the
+        test data set we have. We are able to achieve a 81.5% accuracy.
+    
+    </div>
+    <br>
+    Here is our Prediction Confusion Matrix:
+    <br>
+    <br>
+    <img src="download (1).png">
+    <br>
+    <br>
+    Model Loss:
+    <br>
+    <img src="download (2).png">
+
+    <div>Our Model Code can be found on this <a href="https://colab.research.google.com/drive/1RVSDQ0adkiJ2MBcKPzMd2SVdDR4BKGyW?usp=sharing">Colab Notebook</a>.</div>
+    <br>
+    <h3>Result:</h3>
+    <br>
+    <div>
+        Our model ended up getting higher accuracies and lower losses than we expected. We could see
+        that our Chihuhuas were very well predicted. However, Muffins do get confused with chihuahuas very often
+        at at 33% rate. Here is an example of a muffing image being confused with a chihuahua
+    </div>
+    <br>
+    <img src="download (3).png">
+    <br>
+    <div>
+        Our model greatly satisifes a high accuracy for images that could be wrongly percevied by humans.
+        We personally found a lot of similarities betwen muffin and chihuahua images but could figure out 
+        which is which after focusing on the image for some time. However, CV models don't work like that and 
+        generally look for similar patters in images which can confuse our models.
+    </div>
+    <br>
+    <div>
+        Overall, this project provided us with a response to our problem and gave us a new initiative 
+        for further things to look at in Computer Vision models and different ways to improve
+        and use them for our own benefit.
+    </div>
+    <br>
+    <footer>
+        <p>
+        CSE 455: Final Project
+        <br>
+        Winter 2023
+    </p>
+    </footer>
 </body>
 
 </html>
