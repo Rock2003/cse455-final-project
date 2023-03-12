@@ -23,10 +23,10 @@
   <h3>Problem:</h3>
   <br>
   <div>
-  We humans can get confused by many visual aspects. Whether that's due to image tricks
-  or just simple image similarities. In our project, we experiment this phenomenon with 
-  Computer Vision techniques to see how computers can react to this slight differences.
-    </div>
+  We humans can get confused by what we see quite easily, whether that's due to optical illusions
+  or just two images being really similar. In our project, we experiment this phenomenon using
+  Computer Vision techniques in order to investigate how computers can react to these slight differences. To do so we attempt to perform a binary classification between chihuahuas and muffins, two categories of images which can, at times, look exceedingly alike.
+  </div>
     <br>
     <div>
         The following meme shows the confusion we try to create in our Computer Vision model:
@@ -40,23 +40,25 @@
 
     <div>
         We chose the following <a href="https://www.kaggle.com/datasets/samuelcortinhas/muffin-vs-chihuahua-image-classification">Kaggle Dataset</a>.
-        This dataset includes 6,000 scraped images from Google Image without duplicates.
-        80% of our data is used to train our model and 20% of the data is used for testing.
+        This dataset includes 6,000 scraped images from Google Images without duplicates.
         
     </div>
     <br>
-    Here are some sample pictures of our dataset:
+    Here are some sample pictures from our dataset:
     <br>
     <img src="download.png">
     <br>
 
     <h3>Processing:</h3>
-    <div>To ensure uniformity of our data for training. We first filtered images by 
-        their aspect ratio such that we only have square images with a 1:1 ratio. Since our GPUs
-        have limited memory, we decided to scale down images to a jpeg format with a size of 64x64x3.
-        Images are also flipped 50% of the time horizontally in our training dataset to ensure
-        more randomness. Finally, only a batch size of 128 is used to load the data for every
-        training iteration.
+    <div> We took a number of steps to ensure uniformity of our data for training. We first
+        filtered images by their aspect ratio such that we only have square images with a 1:1 ratio. This
+        left us with about 500 images of muffins and 500 images of chihuahuas which fit this ratio.
+        To ensure that both our training and test sets had a good balance of each type of image we
+        allocated roughly 400 images of each kind to our training set and the rest to the test set.
+        Since our GPUs have limited memory, we decided to scale down the images to a jpeg format with a
+        dimensions of 64 x 64 x 3. We also flipped images on their horizontal axis 50% of the time
+        in our training dataset to ensure more randomness to try and further confuse our model.
+        Additionally, we used a batch size of 128 to load the data for every training iteration.
 
     </div>
     <br>
@@ -64,10 +66,10 @@
     <br>
     <h3>Algorithm:</h3>
     <div>
-        We use a binary Classification approach using a CNN model. We first start by using resnet18
-        as it works very well for this type of Classifications as we have seen through the class tutorials.
+        We use a binary classification approach using a CNN model. We first start by using resnet18
+        as it works very well for these types of classifications as we have seen in the class tutorials.
         The model is trained for 70 epochs with a learning rate of 0.01. We evaluate our model on the
-        test data set we have. We are able to achieve a 81.5% accuracy.
+        test data set we have. We are able to achieve 81.5% accuracy rate on the test set.
     
     </div>
     <br>
@@ -86,24 +88,26 @@
     <h3>Result:</h3>
     <br>
     <div>
-        Our model ended up getting higher accuracies and lower losses than we expected. We could see
-        that our Chihuhuas were very well predicted. However, Muffins do get confused with chihuahuas very often
-        at at 33% rate. Here is an example of a muffing image being confused with a chihuahua
+        Our model ended up achieving higher accuracies and lower losses than we expected. We could see
+        that in our confusion matrix that our chihuahuas were very well predicted. However, muffins
+        do get confused with chihuahuas very often at a 33% rate. Here is an example of a muffing
+        image which was confused with a chihuahua by our model:
     </div>
     <br>
     <img src="download (3).png">
     <br>
     <div>
-        Our model greatly satisifes a high accuracy for images that could be wrongly percevied by humans.
-        We personally found a lot of similarities betwen muffin and chihuahua images but could figure out 
-        which is which after focusing on the image for some time. However, CV models don't work like that and 
-        generally look for similar patters in images which can confuse our models.
+        Our model reaches a high accuracy for images that could be mixed up by even humans.
+        We personally found a lot of similarities between the muffin and chihuahua images
+        but could eventually figure out which was which after focusing on the images for some time.
+        However, CV models don't work like that and generally look for similar patters in images
+        which can confuse the models.
     </div>
     <br>
     <div>
-        Overall, this project provided us with a response to our problem and gave us a new initiative 
-        for further things to look at in Computer Vision models and different ways to improve
-        and use them for our own benefit.
+        Overall, this project provided us with a response to our inquiry and let us take initiative
+        to further explore Computer Vision models and different ways to improve and use them for our
+        own benefit and amusement.
     </div>
     <br>
     <footer>
